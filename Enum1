@@ -1,0 +1,51 @@
+public class Enum {
+
+    public static void main(String[] args) {
+        Level level = Level.HIGH;
+        Kolor kolor =  Kolor.CZ1;
+
+        if(kolor.equals(Kolor.aa)){
+            System.out.println("Zgadza się");
+        }
+        else{
+            System.out.println("Nie zgadza się");
+
+        }
+
+        System.out.println(czyLadny(kolor));
+
+        Kolor[] kolory = Kolor.values();
+        for (int i=0; i<kolory.length; i++){
+            System.out.println((Kolor.values()[i]));
+        }
+for (Kolor kolorek:Kolor.values()){
+    System.out.println(kolorek);
+}
+
+
+    }
+    public static String czyLadny(Kolor kolor){
+        return (kolor.ladny)?"ladny":"brzydki";
+    }
+
+
+    public enum Level {
+        HIGH,
+        MEDIUM,
+        LOW
+    }
+public enum Kolor{
+        CZ1(true),
+    ZIELONY(false),
+    NIEBIESKI(false),
+    aa(true);
+
+    boolean ladny;
+
+    private Kolor(boolean czyLadny){
+            ladny=czyLadny;
+    }
+    }
+
+
+}
